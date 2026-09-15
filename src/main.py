@@ -110,6 +110,17 @@ def turnTo(targetDegrees):
        wait(20, MSEC)
 
 
+def DriveControll():
+    axis3pos = controller.axis3.position()
+    axis2pos = controller.axis2.position()
+
+    drivetrainLeft.set_velocity(controller.axis3.position(), PERCENT)
+    drivetrainRight.set_velocity(controller.axis2.position(),PERCENT)
+
+        
+    
+
+
 def autonomous():
    brain.screen.clear_screen()
    brain.screen.print("autonomous code")
@@ -151,6 +162,7 @@ def user_control():
    wait(1000)
    turnTo(0)
    wait(1000)
+   DriveControll()
 
 
 
